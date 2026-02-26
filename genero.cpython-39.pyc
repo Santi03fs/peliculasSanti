@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="director_demo_nolan" model="res.partner">
+            <field name="name">Christopher Nolan</field>
+        </record>
+        <record id="director_demo_spielberg" model="res.partner">
+            <field name="name">Steven Spielberg</field>
+        </record>
+
+        <record id="presupuesto_demo_1" model="presupuesto">
+            <field name="name">El Caballero Oscuro</field>
+            <field name="puntuacion2">95</field>
+            <field name="clasificacion">PG-13</field>
+            <field name="fecha_estreno">2008-07-18</field>
+            <field name="director_id" ref="director_demo_nolan"/>
+            <field name="vista_general">Batman se enfrenta al Joker, un criminal que siembra el caos en Gotham City.</field>
+            <field name="es_libro">False</field>
+            <field name="genero_ids" eval="[(6, 0, [ref('genero_accion'), ref('genero_drama')])]"/>
+        </record>
+
+        <record id="presupuesto_demo_2" model="presupuesto">
+            <field name="name">Jurassic Park</field>
+            <field name="puntuacion2">88</field>
+            <field name="clasificacion">PG-13</field>
+            <field name="fecha_estreno">1993-06-11</field>
+            <field name="director_id" ref="director_demo_spielberg"/>
+            <field name="vista_general">Un parque temático con dinosaurios clonados se convierte en una pesadilla.</field>
+            <field name="es_libro">True</field>
+            <field name="genero_ids" eval="[(6, 0, [ref('genero_aventura'), ref('genero_ciencia_ficcion')])]"/>
+        </record>
+
+        <record id="presupuesto_demo_3" model="presupuesto">
+            <field name="name">Inception</field>
+            <field name="puntuacion2">92</field>
+            <field name="clasificacion">PG-13</field>
+            <field name="fecha_estreno">2010-07-16</field>
+            <field name="director_id" ref="director_demo_nolan"/>
+            <field name="vista_general">Un ladrón que roba secretos a través de los sueños recibe una última misión.</field>
+            <field name="es_libro">False</field>
+            <field name="genero_ids" eval="[(6, 0, [ref('genero_accion'), ref('genero_ciencia_ficcion')])]"/>
+        </record>
+    </data>
+</odoo>

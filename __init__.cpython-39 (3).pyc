@@ -1,0 +1,19 @@
+from odoo import models, fields
+
+class Genero(models.Model):
+    _name = "genero"
+    _description = "Géneros de películas"
+
+    name = fields.Char(
+        string="Nombre del Género",
+        required=True,
+        help="Introduce el género cinematográfico (ej. Acción)"
+    )
+
+    # Relación Many2many (Muchos a Muchos).
+    # Un género puede estar en muchas películas y una película puede tener muchos géneros.
+    # Se relaciona con la clase 'presupuesto'.
+    presupuesto_ids = fields.Many2many(
+        comodel_name="presupuesto",
+        string="Películas"
+    )
